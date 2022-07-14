@@ -142,3 +142,7 @@ const database = {
       }
     ]
   }
+
+  export const getBusinesses = () => {
+    return database.businesses.map(business => ({...business}))
+  }
