@@ -1,25 +1,25 @@
 import { getBusinesses } from "./database.js"
 
 /*
-    BusinessList Component Function
+    NewYorkBusinesses Component Function
 
     Responsibility:
-        Generate HTML representation of businesses with address
+        Generate HTML representation of businesses in New York
 
     Parameters:
         None
 
     Returns:
-        (string) : HTML representation of businesses, each with it's coresponding address
+        (string) : HTML representation of businesses in New York, each with it's coresponding address
 */
 
-export const businessList = () => {
-    const bizArray = getBusinesses()
-    let bizHTML = ''
+export const NewYorkBusinesses = () => {
+    const nyBizArray = getBusinesses().filter(nyBiz => nyBiz?.addressStateCode === 'NY')
+    let nyBizHTML = ''
 
-    bizArray.forEach(
+    nyBizArray.forEach(
         (biz) => {
-            bizHTML += `
+            nyBizHTML += `
                 <h3 class="biz__companyName">${biz.companyName}</h3>
                 <div class="biz__address">
                     <p class="biz__addrStreet">${biz.addressFullStreet}</p>
@@ -29,6 +29,6 @@ export const businessList = () => {
         }
     )
     
-    return bizHTML
+    return nyBizHTML
 
 }
