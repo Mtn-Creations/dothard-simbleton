@@ -1,3 +1,5 @@
+import { businessListHTML } from "./BusinessList.js"
+
 const contentTarget = document.querySelector("#content")
 
 const renderHTML = () => {
@@ -8,22 +10,22 @@ const renderHTML = () => {
 
   <article class="businesses">
       <h2>All Businesses</h2>
-      ${}
+      ${businessListHTML()}
   </article>
 
   <article class="businesses--manufacturing">
       <h2>Manufacturing Businesses</h2>
-      ${}
+      ${"placeholder"}
   </article>
 
   <article class="businesses--newYork">
       <h2>New York Businesses</h2>
-      ${}
+      ${"placeholder"}
   </article>
 
   <article class="agents">
       <h2>Purchasing Agents</h2>
-      ${}
+      ${"placeholder"}
   </article>
   `
 }
